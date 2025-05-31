@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/phenokinetics/static/css/main.4d6a46e2.css",
+    "main.js": "/phenokinetics/static/js/main.7fbd9c9d.js",
+    "static/js/453.8f0c9edf.chunk.js": "/phenokinetics/static/js/453.8f0c9edf.chunk.js",
+    "index.html": "/phenokinetics/index.html",
+    "main.4d6a46e2.css.map": "/phenokinetics/static/css/main.4d6a46e2.css.map",
+    "main.7fbd9c9d.js.map": "/phenokinetics/static/js/main.7fbd9c9d.js.map",
+    "453.8f0c9edf.chunk.js.map": "/phenokinetics/static/js/453.8f0c9edf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d6a46e2.css",
+    "static/js/main.7fbd9c9d.js"
+  ]
+}
