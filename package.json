@@ -2,6 +2,7 @@
   "name": "phenokinetics-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://smitch5777.github.io/phenokinetics/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

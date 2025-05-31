@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/phenokinetics">
       <div className="App">
         <Navigation />
         <main className="main-content">
