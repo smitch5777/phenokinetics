@@ -1,0 +1,205 @@
+.science-page {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.science-page h1 {
+  text-align: center;
+  color: rgb(94, 120, 183);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.science-overview {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.science-overview h2 {
+  color: rgb(94, 120, 183);
+  margin-bottom: 1.5rem;
+}
+
+.lead-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.science-graphic {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.graphic-placeholder {
+  background-color: rgb(208, 222, 241);
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  display: inline-block;
+  min-width: 600px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.graphic-placeholder p {
+  color: rgb(94, 120, 183);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.science-details {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+}
+
+.science-details h2 {
+  color: rgb(94, 120, 183);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.science-steps {
+  display: grid;
+  gap: 2rem;
+}
+
+.step {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-left: 4px solid rgb(94, 120, 183);
+  border-radius: 5px;
+}
+
+.step h3 {
+  color: rgb(94, 120, 183);
+  margin-bottom: 1rem;
+}
+
+.step p {
+  line-height: 1.6;
+  color: #333;
+}
+
+.key-advantages {
+  background-color: rgb(208, 222, 241);
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  margin: 4rem auto;
+  max-width: 1200px;
+}
+
+.key-advantages h2 {
+  text-align: center;
+  color: rgb(94, 120, 183);
+  margin-bottom: 2rem;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.advantage {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.advantage h3 {
+  color: rgb(94, 120, 183);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.advantage p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.technical-details {
+  max-width: 900px;
+  margin: 4rem auto;
+}
+
+.technical-details h2 {
+  color: rgb(94, 120, 183);
+  margin-bottom: 1.5rem;
+}
+
+.technical-details p {
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.application-areas {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.application-areas h3 {
+  color: rgb(94, 120, 183);
+  margin-bottom: 1rem;
+}
+
+.application-areas ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.application-areas li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #333;
+}
+
+.application-areas li:before {
+  content: "•";
+  color: rgb(94, 120, 183);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.cta-science {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background-color: rgb(94, 120, 183);
+  color: white;
+  border-radius: 10px;
+}
+
+.cta-science h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-science p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-science .btn-primary {
+  background-color: white;
+  color: rgb(94, 120, 183);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.cta-science .btn-primary:hover {
+  background-color: rgb(208, 222, 241);
+}

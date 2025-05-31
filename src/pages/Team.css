@@ -1,0 +1,93 @@
+.team-page {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.team-page h1 {
+  text-align: center;
+  color: rgb(94, 120, 183);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.team-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-grid {
+  display: grid;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  align-items: start;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.member-image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: rgb(208, 222, 241);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info h3 {
+  color: rgb(94, 120, 183);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-info h4 {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.member-info p {
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .member-image {
+    margin: 0 auto;
+  }
+  
+  .member-info p {
+    text-align: left;
+  }
+}
