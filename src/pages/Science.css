@@ -203,3 +203,69 @@
 .cta-science .btn-primary:hover {
   background-color: rgb(208, 222, 241);
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .science-page {
+    padding: 2rem 1rem;
+  }
+  
+  .science-page h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .science-overview h2,
+  .science-details h2,
+  .key-advantages h2,
+  .technical-details h2 {
+    font-size: 1.5rem;
+  }
+  
+  .lead-text {
+    font-size: 1.1rem;
+  }
+  
+  .science-steps {
+    gap: 1.5rem;
+  }
+  
+  .step {
+    padding: 1.5rem;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .advantage {
+    padding: 1.5rem;
+  }
+  
+  .key-advantages {
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+  }
+  
+  .application-areas {
+    padding: 1.5rem;
+  }
+  
+  .cta-science {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+  
+  .cta-science h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-science p {
+    font-size: 1rem;
+  }
+  
+  .cta-science .btn-primary {
+    padding: 0.8rem 1.5rem;
+  }
+}

@@ -136,3 +136,68 @@
   background-color: white;
   color: rgb(94, 120, 183);
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .overview-section {
+    padding: 3rem 1rem;
+  }
+  
+  .overview-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .overview-section > .container > p {
+    font-size: 1.1rem;
+    margin: 0 auto 2rem;
+  }
+  
+  .key-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .feature {
+    padding: 1.5rem;
+  }
+  
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-section p {
+    font-size: 1.1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    max-width: 250px;
+  }
+}

@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Science.css';
 
 const Science = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
-    <div className="science-page">
+    <>
+      <Helmet>
+        <title>EZ-MASH Technology - The Science Behind MASH Diagnosis | PhenoKinetics</title>
+        <meta name="description" content="Discover how PhenoKinetics' EZ-MASH test uses exogenous biomarkers to diagnose MASH non-invasively. Learn about our innovative transporter-based diagnostic approach." />
+      </Helmet>
+      <div className="science-page">
       <div className="container">
         <h1>The Science Behind EZ-MASH</h1>
         
@@ -14,13 +25,6 @@ const Science = () => {
             through invasive liver biopsy, despite being a serious inflammatory, fibrogenic condition 
             with significant effects on drug disposition and toxicity.
           </p>
-        </section>
-
-        <section className="science-graphic">
-          <div className="graphic-placeholder">
-            <img src="/science-diagram-placeholder.png" alt="MASH Diagnostic Process" />
-            <p>Visualization of the EZ-MASH Diagnostic Process</p>
-          </div>
         </section>
 
         <section className="science-details">
@@ -114,10 +118,11 @@ const Science = () => {
         <section className="cta-science">
           <h2>Ready to Learn More?</h2>
           <p>Contact us to discover how EZ-MASH can transform MASH diagnosis in your clinical practice or research.</p>
-          <a href="/contact" className="btn btn-primary">Get in Touch</a>
+          <Link to="/contact" className="btn btn-primary">Get in Touch</Link>
         </section>
       </div>
     </div>
+    </>
   );
 };
 

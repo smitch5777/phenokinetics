@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './Home.css';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
-    <div className="home-page">
+    <>
+      <Helmet>
+        <title>PhenoKinetics - Revolutionary MASH Diagnostic Testing</title>
+        <meta name="description" content="PhenoKinetics pioneers non-invasive MASH diagnostic testing through innovative EZ-MASH technology, transforming liver disease diagnosis without painful biopsies." />
+      </Helmet>
+      <div className="home-page">
       <section className="hero-section">
         <div className="hero-content">
           <h1>PhenoKinetics</h1>
@@ -47,12 +58,13 @@ const Home = () => {
           <h2>Learn More About Our Technology</h2>
           <p>Discover how PhenoKinetics is revolutionizing MASH diagnosis</p>
           <div className="cta-buttons">
-            <a href="/science" className="btn btn-primary">Explore the Science</a>
-            <a href="/team" className="btn btn-secondary">Meet Our Team</a>
+            <Link to="/science" className="btn btn-primary">Explore the Science</Link>
+            <Link to="/team" className="btn btn-secondary">Meet Our Team</Link>
           </div>
         </div>
       </section>
     </div>
+    </>
   );
 };
 

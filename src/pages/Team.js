@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './Team.css';
 
 const Team = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const teamMembers = [
     {
       name: "Nathan J. Cherrington, Ph.D.",
@@ -12,7 +17,7 @@ const Team = () => {
     {
       name: "Curtis Finster",
       role: "Chief Executive Officer",
-      image: `${process.env.PUBLIC_URL}/images/team/Curt Finster Headshot.png`,
+      image: `${process.env.PUBLIC_URL}/images/team/curt-finster-headshot.jpg`,
       bio: "Curtis Finster's career has been focused on small business startup growth and financial management discipline. He has experience in market driven financial changes that require adjustments in order for a company to maintain a high standard of quality control and fiscal responsibility. Mr. Finster's experience encompasses development of finance training, sales forecasting modeling, marketing and solutions to optimize the benefits for the company's focus and goals. His years of experience through market changes provide the perfect opportunity to lead the startup phase into future expansion. His purpose and role with PhenoKinetics, LLC is to be responsible for assisting with the long-term vision for the company to navigate the growth of the company as we bring this important and vital MASH diagnostic product to market."
     },
     {
@@ -36,7 +41,12 @@ const Team = () => {
   ];
 
   return (
-    <div className="team-page">
+    <>
+      <Helmet>
+        <title>Our Team - Meet the Experts Behind PhenoKinetics</title>
+        <meta name="description" content="Meet the PhenoKinetics leadership team developing revolutionary MASH diagnostic technology. Led by Dr. Nathan Cherrington and experienced executives in biotechnology." />
+      </Helmet>
+      <div className="team-page">
       <div className="container">
         <h1>Our Team</h1>
         <p className="team-intro">
@@ -59,6 +69,7 @@ const Team = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
