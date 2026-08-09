@@ -13,12 +13,12 @@ const steps = [
     body: 'As MASH develops, three separate liver transport proteins change the way they handle drugs and their metabolites. Together, that slows how efficiently our probe metabolite, EZE-Gluc, gets excreted through bile.',
   },
   {
-    title: 'Biomarker Retention',
+    title: 'Probe Retention',
     body: "With biliary excretion slowed down, EZE-Gluc backs up into the bloodstream instead of clearing out. That's what leaves MASH patients with measurably higher levels of it in plasma.",
   },
   {
     title: 'Disease Correlation',
-    body: "The more advanced the disease, the higher those plasma levels climb — so a blood draw can stand in for a lot of what a biopsy is normally used to tell you.",
+    body: "The more advanced the disease, the higher those plasma levels climb, so a blood draw can stand in for a lot of what a biopsy is normally used to tell you.",
   },
 ];
 
@@ -33,7 +33,7 @@ const advantages = [
   },
   {
     title: 'Published & Peer-Reviewed',
-    body: 'In a study of biopsy-confirmed patients, plasma EZE-Gluc ran about 4.5x higher in MASH patients, and levels tracked with hepatocyte ballooning, the pathology finding that actually defines the disease.',
+    body: 'In a study of biopsy-confirmed patients, plasma EZE-Gluc ran about 4.5x higher in MASH patients. Of the individual NAS components, it tracked most closely with hepatocyte ballooning, the pathology finding that actually defines the disease, reaching an AUROC of 0.97 (95% CI, 0.93–1.00) on the 60-minute sample.',
     link: {
       href: 'https://pubmed.ncbi.nlm.nih.gov/42531743/',
       label: 'Read the paper in Drug Metabolism and Disposition',
@@ -42,6 +42,66 @@ const advantages = [
   {
     title: 'Clinical Applications',
     body: 'Beyond diagnosis, the test can screen patients into or out of trials, cutting down on the confounding factors that make MASH drug development so hard to run cleanly.',
+  },
+];
+
+const comparisonTests = [
+  {
+    name: 'EZ-MASH (EZE-Gluc)',
+    auroc: '0.92',
+    sensitivity: '0.88',
+    specificity: '0.96',
+    note: 'Biopsy-confirmed MASH vs. non-MASH',
+    highlight: true,
+  },
+  {
+    name: 'FAST score (FibroScan + AST)',
+    auroc: '0.77',
+    sensitivity: '0.88',
+    specificity: '0.53',
+    note: 'Fibrotic MASH: still requires fibrosis ≥F2, not activity alone',
+  },
+  {
+    name: 'MACK-3',
+    auroc: '0.77',
+    sensitivity: '0.94',
+    specificity: '0.40',
+    note: 'Fibrotic MASH: purpose-built for this endpoint; best blood test in study',
+  },
+  {
+    name: 'Agile3+',
+    auroc: '0.71',
+    sensitivity: '0.61',
+    specificity: '0.71',
+    note: 'Fibrotic MASH: newer elastography composite (FAST successor)',
+  },
+  {
+    name: 'FNI (Fibrotic NASH Index)',
+    auroc: '0.71',
+    sensitivity: '0.97',
+    specificity: '0.11',
+    note: 'Fibrotic MASH: purpose-built for this endpoint, unlike FIB-4',
+  },
+  {
+    name: 'ELF (Enhanced Liver Fibrosis)',
+    auroc: '0.70',
+    sensitivity: '1.00',
+    specificity: '0.05',
+    note: 'Fibrotic MASH: built for fibrosis staging, not MASH',
+  },
+  {
+    name: 'FIB-4',
+    auroc: '0.67',
+    sensitivity: '0.63',
+    specificity: '0.61',
+    note: 'Fibrotic MASH: built for fibrosis staging, not MASH',
+  },
+  {
+    name: 'FibroTest',
+    auroc: '0.62',
+    sensitivity: '0.65',
+    specificity: '0.51',
+    note: 'Fibrotic MASH: built for fibrosis staging, not MASH',
   },
 ];
 
@@ -64,9 +124,11 @@ const Science = () => (
           </p>
           <h1 className="mt-5 text-4xl font-semibold sm:text-5xl">The Science Behind EZ-MASH</h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Metabolic dysfunction-Associated Steatohepatitis (MASH) has traditionally been identified
-            through invasive liver biopsy, despite being a serious inflammatory, fibrogenic condition
-            with significant effects on drug disposition and toxicity.
+            Metabolic dysfunction-associated steatohepatitis (MASH) is a serious inflammatory,
+            fibrogenic condition with significant effects on drug disposition and toxicity, yet it
+            has traditionally been identified only through invasive liver biopsy. Non-invasive
+            blood tests and imaging exist, but most were built to flag advanced fibrosis rather
+            than MASH itself, and fall short on diagnostic accuracy.
           </p>
         </div>
       </Container>
@@ -131,6 +193,196 @@ const Science = () => (
     </section>
 
     <section className="py-20 lg:py-28">
+      <Container>
+        <SectionHeading
+          eyebrow="Study Results"
+          title="What the Data Shows"
+          lead="In a cohort of biopsy-confirmed patients, plasma EZE-Gluc separated MASH from non-MASH clearly."
+        />
+
+        <dl className="mx-auto mt-16 grid max-w-xl grid-cols-3 gap-6">
+          <div>
+            <dt className="inline-block border-b-2 border-primary pb-0.5 text-lg font-medium text-foreground">
+              AUROC
+            </dt>
+            <dd className="mt-1 text-3xl font-semibold sm:text-4xl">0.92</dd>
+          </div>
+          <div>
+            <dt className="inline-block border-b-2 border-primary pb-0.5 text-lg font-medium text-foreground">
+              Sensitivity
+            </dt>
+            <dd className="mt-1 text-3xl font-semibold sm:text-4xl">0.88</dd>
+          </div>
+          <div>
+            <dt className="inline-block border-b-2 border-primary pb-0.5 text-lg font-medium text-foreground">
+              Specificity
+            </dt>
+            <dd className="mt-1 text-3xl font-semibold sm:text-4xl">0.96</dd>
+          </div>
+        </dl>
+
+        <p className="mx-auto mt-6 max-w-xl text-center text-sm text-muted-foreground">
+          Source:{' '}
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/42531743/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-primary hover:underline"
+          >
+            Farrera et al., Drug Metabolism and Disposition (2026)
+          </a>
+        </p>
+
+        <Card className="mx-auto mt-8 max-w-xl bg-primary/5">
+          <CardContent className="py-5 text-center">
+            <p className="text-sm text-muted-foreground">
+              Component-level analysis: of all NAS components, plasma EZE-Gluc tracked most closely
+              with{' '}
+              <span className="font-medium text-foreground">hepatocyte ballooning</span>, the
+              histologic feature that defines MASH, reaching
+            </p>
+            <p className="mt-1 text-3xl font-semibold sm:text-4xl">0.97 AUROC</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              (95% CI, 0.93–1.00) on the 60-minute post-dose sample
+            </p>
+          </CardContent>
+        </Card>
+      </Container>
+    </section>
+
+    <section className="border-t border-border py-20 lg:py-28">
+      <Container>
+        <SectionHeading
+          eyebrow="Comparative Performance"
+          title="How EZ-MASH Compares to Existing Non-Invasive Tests"
+          lead="FIB-4, ELF, and elastography-based scores are all widely used, but most were developed and validated to detect fibrosis, not MASH itself. Measured directly against a MASH diagnosis, their accuracy falls even further behind EZ-MASH."
+        />
+
+        <div className="mt-16 overflow-x-auto rounded-2xl border border-border">
+          <table className="w-full min-w-[640px] border-collapse text-left">
+            <thead>
+              <tr className="border-b border-border bg-muted/60 text-sm text-muted-foreground">
+                <th scope="col" className="px-5 py-3.5 font-medium">
+                  Test
+                </th>
+                <th scope="col" className="px-5 py-3.5 font-medium">
+                  AUROC
+                </th>
+                <th scope="col" className="px-5 py-3.5 font-medium">
+                  Sensitivity
+                </th>
+                <th scope="col" className="px-5 py-3.5 font-medium">
+                  Specificity
+                </th>
+                <th scope="col" className="px-5 py-3.5 font-medium">
+                  What it was validated for
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonTests.map(({ name, auroc, sensitivity, specificity, note, highlight }, i) => (
+                <tr
+                  key={name}
+                  className={
+                    i === comparisonTests.length - 1
+                      ? highlight
+                        ? 'bg-brand-blue'
+                        : undefined
+                      : highlight
+                        ? 'border-b border-white/40 bg-brand-blue'
+                        : 'border-b border-border'
+                  }
+                >
+                  <td
+                    className={
+                      highlight
+                        ? 'px-5 py-4 text-base font-semibold text-white'
+                        : 'px-5 py-4 font-medium text-foreground'
+                    }
+                  >
+                    {name}
+                  </td>
+                  <td
+                    className={`px-5 py-4 tabular-nums text-foreground ${highlight ? 'text-lg font-bold text-white' : ''}`}
+                  >
+                    {auroc}
+                  </td>
+                  <td
+                    className={`px-5 py-4 tabular-nums text-foreground ${highlight ? 'text-lg font-bold text-white' : ''}`}
+                  >
+                    {sensitivity}
+                  </td>
+                  <td
+                    className={`px-5 py-4 tabular-nums text-foreground ${highlight ? 'text-lg font-bold text-white' : ''}`}
+                  >
+                    {specificity}
+                  </td>
+                  <td className={`px-5 py-4 text-sm ${highlight ? 'text-white/80' : 'text-muted-foreground'}`}>{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="mt-4 text-sm text-muted-foreground">
+          Sources: EZ-MASH:{' '}
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/42531743/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-primary hover:underline"
+          >
+            Farrera et al., Drug Metabolism and Disposition (2026)
+          </a>
+          . All other tests:{' '}
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/40212791/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-primary hover:underline"
+          >
+            Fichez et al., JHEP Reports (2025)
+          </a>
+          .
+        </p>
+
+        <p className="mt-4 text-sm text-muted-foreground">
+          All seven comparators come from a single study of 1,005 biopsy-proven MASLD patients
+          across five centers, each test evaluated against fibrotic MASH (MASH plus clinically
+          significant fibrosis, ≥F2), the endpoint used to screen patients into MASH drug trials,
+          rather than fibrosis stage alone. Sensitivity and specificity reflect each test's
+          published rule-out cutoff (FIB-4 &lt;1.30, ELF &lt;7.7, FAST ≤0.35, MACK-3 &lt;0.135,
+          Agile3+ &lt;0.451, FNI ≤0.10, FibroTest &lt;0.32); each test trades this for a different
+          sensitivity and specificity pair at a separate, more specific rule-in cutoff, not shown
+          here. FIB-4's AUROC (0.67) comes from the same 817-patient elastography subgroup as FAST
+          and Agile3+, but the paper reports its sensitivity and specificity only for the full
+          1,005-patient cohort, so those two figures are not drawn from the same patients.
+        </p>
+
+        <p className="mt-4 text-sm text-muted-foreground">
+          These same tests report substantially higher AUROCs, 0.76 to 0.85, in studies that assess
+          only whether they can detect fibrosis stage, the endpoint FIB-4, ELF, and FibroTest were
+          actually designed and validated for. Against a MASH diagnosis instead, all three perform
+          substantially worse. FNI, MACK-3, FAST, and Agile3+ perform better here because they were
+          designed for a MASH-inclusive endpoint, though that endpoint still requires significant
+          fibrosis alongside MASH activity, so none of them measures activity in isolation. For
+          reference, ALT, a routine liver enzyme test, reached only 0.68 AUROC (63% sensitivity,
+          65% specificity) against a histologic MASH diagnosis in the NIMBLE cohort (
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/37679433/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-primary hover:underline"
+          >
+            Sanyal et al., Nature Medicine, 2023
+          </a>
+          ).
+        </p>
+
+      </Container>
+    </section>
+
+    <section className="border-t border-border py-20 lg:py-28">
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <div>

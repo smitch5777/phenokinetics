@@ -23,7 +23,7 @@ const Footer = () => (
             <span className="text-lg font-semibold tracking-tight text-white">PhenoKinetics</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed">
-            Revolutionizing MASH diagnosis through innovative exogenous biomarker technology.
+            Revolutionizing MASH diagnosis through innovative exogenous probe technology.
           </p>
         </div>
 

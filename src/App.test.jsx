@@ -12,7 +12,7 @@ const renderAt = (path) => {
 // what the page is about.
 test('renders the homepage at /', () => {
   renderAt('/');
-  expect(screen.getByRole('heading', { level: 1, name: /revolutionary mash diagnostic testing/i }))
+  expect(screen.getByRole('heading', { level: 1, name: /revolutionary mash non-invasive test/i }))
     .toBeInTheDocument();
 });
 
@@ -40,6 +40,6 @@ test('title and description follow client-side navigation', async () => {
   await waitFor(() => expect(document.title).toMatch(/EZ-MASH Technology/));
   expect(document.querySelectorAll('head title')).toHaveLength(1);
   expect(document.querySelector('head meta[name="description"]').content).toMatch(
-    /exogenous biomarkers/
+    /exogenous probe/
   );
 });

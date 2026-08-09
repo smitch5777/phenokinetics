@@ -13,7 +13,7 @@ const routeMeta = {
   '/science': {
     title: 'EZ-MASH Technology - The Science Behind MASH Diagnosis | PhenoKinetics',
     description:
-      "Discover how PhenoKinetics' EZ-MASH test uses exogenous biomarkers to diagnose MASH non-invasively. Learn about our innovative transporter-based diagnostic approach.",
+      "Discover how PhenoKinetics' EZ-MASH test uses an exogenous probe to diagnose MASH non-invasively. Learn about our innovative transporter-based diagnostic approach.",
   },
   '/team': {
     title: 'Our Team - Meet the Experts Behind PhenoKinetics',
@@ -23,7 +23,7 @@ const routeMeta = {
   '/contact': {
     title: 'Contact PhenoKinetics - Get in Touch for MASH Diagnostic Solutions',
     description:
-      'Contact PhenoKinetics to learn about our EZ-MASH diagnostic test. Located in Tucson, Arizona. Email info@phenokinetics.com or call (385) 262-4032.',
+      'Contact PhenoKinetics to learn about our EZ-MASH diagnostic liver function test. Located in Tucson, Arizona. Email info@phenokinetics.com or call (385) 262-4032.',
   },
 };
 
