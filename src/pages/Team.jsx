@@ -17,7 +17,6 @@ const teamMembers = [
     name: 'Curtis Finster',
     role: 'Chief Executive Officer',
     image: '/images/team/curt-finster.jpg',
-    imagePosition: 'center 20%',
     bio: "Curtis Finster's career has been focused on small business startup growth and financial management discipline. He has experience in market driven financial changes that require adjustments in order for a company to maintain a high standard of quality control and fiscal responsibility. Mr. Finster's experience encompasses development of finance training, sales forecasting modeling, marketing and solutions to optimize the benefits for the company's focus and goals. His years of experience through market changes provide the perfect opportunity to lead the startup phase into future expansion. His purpose and role with PhenoKinetics, LLC is to be responsible for assisting with the long-term vision for the company to navigate the growth of the company as we bring this important and vital MASH diagnostic product to market.",
   },
   {
