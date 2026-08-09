@@ -10,34 +10,38 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const steps = [
   {
     title: 'Transporter Changes',
-    body: 'Progression to MASH results in changes to three separate drug transport processes, which combine to result in decreased biliary efflux of our probe drug metabolite (EZE-Gluc).',
+    body: 'As MASH develops, three separate liver transport proteins change the way they handle drugs and their metabolites. Together, that slows how efficiently our probe metabolite, EZE-Gluc, gets excreted through bile.',
   },
   {
     title: 'Biomarker Retention',
-    body: 'The metabolite is retained in the blood. These transporter changes result in the accumulation of our exogenous biomarker in MASH patients.',
+    body: "With biliary excretion slowed down, EZE-Gluc backs up into the bloodstream instead of clearing out. That's what leaves MASH patients with measurably higher levels of it in plasma.",
   },
   {
     title: 'Disease Correlation',
-    body: 'The biomarker levels increase with disease severity, providing a quantifiable measure of MASH progression without invasive procedures.',
+    body: "The more advanced the disease, the higher those plasma levels climb — so a blood draw can stand in for a lot of what a biopsy is normally used to tell you.",
   },
 ];
 
 const advantages = [
   {
     title: 'Non-Invasive Testing',
-    body: 'Unlike traditional liver biopsies, our test requires only a plasma sample, making it safer and more comfortable for patients.',
+    body: 'A liver biopsy means sedation, a needle through the abdomen, and a real risk of bleeding or infection. Our test just needs a plasma sample.',
   },
   {
     title: 'Disease-Specific Detection',
-    body: 'Our data demonstrates a disease-specific transporter expression pattern and selective biomarker substrate for those transporters.',
+    body: "The transporters that shift in MASH don't shift the same way in simple steatosis or in a healthy liver, and EZE-Gluc happens to be a substrate for exactly those transporters. That's what keeps the test specific instead of just flagging general liver stress.",
   },
   {
-    title: 'Proven Concept',
-    body: 'Exciting proof of concept in MASH patients shows higher biomarker metabolite levels in patients with hepatic impairment that increase with disease severity.',
+    title: 'Published & Peer-Reviewed',
+    body: 'In a study of biopsy-confirmed patients, plasma EZE-Gluc ran about 4.5x higher in MASH patients, and levels tracked with hepatocyte ballooning, the pathology finding that actually defines the disease.',
+    link: {
+      href: 'https://pubmed.ncbi.nlm.nih.gov/42531743/',
+      label: 'Read the paper in Drug Metabolism and Disposition',
+    },
   },
   {
     title: 'Clinical Applications',
-    body: 'The test can identify patients for therapy and patient selection to reduce confounding factors and potential liabilities in clinical trials.',
+    body: 'Beyond diagnosis, the test can screen patients into or out of trials, cutting down on the confounding factors that make MASH drug development so hard to run cleanly.',
   },
 ];
 
@@ -101,13 +105,24 @@ const Science = () => (
         <SectionHeading eyebrow="Advantages" title="Key Advantages of Our Approach" />
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2">
-          {advantages.map(({ title, body }) => (
+          {advantages.map(({ title, body, link }) => (
             <Card key={title} className="h-full bg-background">
               <CardHeader>
                 <CardTitle className="text-lg">{title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="leading-relaxed text-muted-foreground">{body}</p>
+                {link && (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                  >
+                    {link.label}
+                    <ArrowRight className="size-3.5" aria-hidden="true" />
+                  </a>
+                )}
               </CardContent>
             </Card>
           ))}
@@ -121,10 +136,24 @@ const Science = () => (
           <div>
             <h2 className="text-3xl font-semibold sm:text-4xl">Technical Background</h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              Our EZ-MASH test proposes that plasma levels of EZE-Gluc can be used as a
-              diagnostic probe to distinguish patients with MASH from those with steatosis or healthy
-              livers. The altered disposition of EZE-Gluc in MASH patients serves as a specific,
-              non-invasive exogenous biomarker capable of diagnosing patients with MASH.
+              The approach is straightforward: give a patient a small, subtherapeutic dose of
+              ezetimibe, then measure how much of its metabolite, EZE-Gluc, shows up in plasma.
+              Because the liver transporters that clear EZE-Gluc are altered specifically in MASH,
+              the amount that accumulates in blood separates MASH patients from those with simple
+              steatosis or a healthy liver.
+            </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              This mechanism is described in{' '}
+              <a
+                href="https://pubmed.ncbi.nlm.nih.gov/42531743/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary hover:underline"
+              >
+                Farrera et al., Drug Metabolism and Disposition (2026)
+              </a>
+              , which found roughly 4.5-fold higher plasma EZE-Gluc in biopsy-confirmed MASH
+              patients compared to non-MASH patients.
             </p>
           </div>
 
