@@ -4,6 +4,7 @@ import { ArrowRight, Check } from 'lucide-react';
 import PageMeta from '../components/PageMeta';
 import Container from '../components/Container';
 import SectionHeading from '../components/SectionHeading';
+import NasPlasmaChart from '../components/NasPlasmaChart';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -247,6 +248,20 @@ const Science = () => (
             </p>
           </CardContent>
         </Card>
+
+        <div className="mx-auto mt-16 max-w-3xl">
+          <h3 className="text-center text-lg font-semibold text-foreground">
+            Plasma EZE-Gluc by NAS Score
+          </h3>
+          <p className="mx-auto mt-2 max-w-xl text-center text-sm text-muted-foreground">
+            Mean 60-minute plasma EZE-Gluc by total NAS score across the same 53-patient cohort.
+            Patients scoring NAS 5, the most severe group, separate clearly from every lower
+            score.
+          </p>
+          <div className="mt-8">
+            <NasPlasmaChart />
+          </div>
+        </div>
       </Container>
     </section>
 
