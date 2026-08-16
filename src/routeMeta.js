@@ -23,7 +23,7 @@ const routeMeta = {
   '/contact': {
     title: 'Contact PhenoKinetics - Get in Touch for MASH Diagnostic Solutions',
     description:
-      'Contact PhenoKinetics to learn about our EZ-MASH diagnostic liver function test. Located in Tucson, Arizona. Email info@phenokinetics.com or call (385) 262-4032.',
+      'Contact PhenoKinetics to learn about our EZ-MASH diagnostic liver function test. Located in Tucson, Arizona. Email info@phenokinetics.com or call (520) 343-1710.',
   },
 };
 

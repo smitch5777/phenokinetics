@@ -72,8 +72,8 @@ const Contact = () => (
             </CardHeader>
             <CardContent className="space-y-1.5">
               <p className="text-muted-foreground">Business hours</p>
-              <a href="tel:+13852624032" className="rounded font-medium text-primary hover:underline">
-                (385) 262-4032
+              <a href="tel:+15203431710" className="rounded font-medium text-primary hover:underline">
+                (520) 343-1710
               </a>
             </CardContent>
           </Card>
