@@ -20,9 +20,15 @@ const Y_TICKS = [0, 50, 100, 150, 200];
 const LEFT = 54;
 const RIGHT = 20;
 const TOP = 70;
-const BOTTOM = 46;
+const BOTTOM = 62;
 const WIDTH = 640;
-const HEIGHT = 366;
+const HEIGHT = 382;
+
+const GROUP_BRACKETS = [
+  { label: 'not-MASH', from: 0, to: 4 },
+  { label: 'MASH', from: 5, to: 5 },
+];
+const BRACKET_PAD = 6;
 const INNER_WIDTH = WIDTH - LEFT - RIGHT;
 const INNER_HEIGHT = HEIGHT - TOP - BOTTOM;
 const BAND_WIDTH = INNER_WIDTH / GROUP_STATS.length;
@@ -74,6 +80,7 @@ const NasPlasmaChart = () => {
             <title id="nas-plasma-chart-title">
               Bar chart of mean plasma EZE-Gluc concentration at 60 minutes by NAS score, with
               error bars showing standard error of the mean, across 53 biopsy-confirmed patients.
+              NAS 0 through 4 are grouped as not-MASH; NAS 5 is grouped as MASH.
             </title>
 
             <text x={LEFT} y={18} className="fill-muted-foreground text-[11px] font-medium">
@@ -164,21 +171,55 @@ const NasPlasmaChart = () => {
               <text
                 key={`axis-${bar.nas}`}
                 x={bar.centerX}
-                y={baselineY + 20}
+                y={baselineY + 18}
                 textAnchor="middle"
                 className="fill-muted-foreground text-[11px] tabular-nums"
               >
                 {bar.nas}
               </text>
             ))}
-            <text
-              x={LEFT + INNER_WIDTH / 2}
-              y={baselineY + 38}
-              textAnchor="middle"
-              className="fill-muted-foreground text-[11px] font-medium"
-            >
-              NAS score
-            </text>
+
+            {GROUP_BRACKETS.map(({ label, from, to }) => {
+              const x1 = bandCenterFor(from) - BAND_WIDTH / 2 + BRACKET_PAD;
+              const x2 = bandCenterFor(to) + BAND_WIDTH / 2 - BRACKET_PAD;
+              const bracketY = baselineY + 32;
+              return (
+                <g key={label}>
+                  <line
+                    x1={x1}
+                    x2={x2}
+                    y1={bracketY}
+                    y2={bracketY}
+                    className="stroke-muted-foreground"
+                    strokeWidth="1"
+                  />
+                  <line
+                    x1={x1}
+                    x2={x1}
+                    y1={bracketY}
+                    y2={bracketY - 5}
+                    className="stroke-muted-foreground"
+                    strokeWidth="1"
+                  />
+                  <line
+                    x1={x2}
+                    x2={x2}
+                    y1={bracketY}
+                    y2={bracketY - 5}
+                    className="stroke-muted-foreground"
+                    strokeWidth="1"
+                  />
+                  <text
+                    x={(x1 + x2) / 2}
+                    y={bracketY + 18}
+                    textAnchor="middle"
+                    className="fill-foreground text-[12px] font-semibold uppercase tracking-wide"
+                  >
+                    {label}
+                  </text>
+                </g>
+              );
+            })}
           </svg>
 
           {hoveredBar && (

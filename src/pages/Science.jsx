@@ -255,8 +255,8 @@ const Science = () => (
           </h3>
           <p className="mx-auto mt-2 max-w-xl text-center text-sm text-muted-foreground">
             Mean 60-minute plasma EZE-Gluc by total NAS score across the same 53-patient cohort.
-            Patients scoring NAS 5, the most severe group, separate clearly from every lower
-            score.
+            Patients scoring NAS 5, the earliest stage of MASH, separate clearly from
+            "not-MASH".
           </p>
           <div className="mt-8">
             <NasPlasmaChart />
